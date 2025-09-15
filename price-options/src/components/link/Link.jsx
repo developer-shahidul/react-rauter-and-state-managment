@@ -3,11 +3,9 @@
 const Link = ({ route }) => {
   const { name, path } = route;
   return (
-    <div>
-      <li className="mr-6">
-        <a href={path}>{name}</a>
-      </li>
-    </div>
+    <li className="mr-6 px-6 hover:bg-yellow-500">
+      <a href={path}>{name}</a>
+    </li>
   );
 };
 

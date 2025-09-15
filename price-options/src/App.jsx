@@ -8,7 +8,6 @@ function App() {
     <>
       {/* <DaisiNav></DaisiNav> */}
       <Navbar></Navbar>
-      <h1 className="bg-amber-300 ">Vite + React </h1>
     </>
   );
 }
