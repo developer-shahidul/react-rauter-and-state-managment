@@ -2,7 +2,7 @@
 import { AiFillCheckCircle } from "react-icons/ai";
 
 const Features = ({ feture }) => {
-  console.log(feture);
+  // console.log(feture);
   return (
     <div>
       <p className="flex items-center  ">
