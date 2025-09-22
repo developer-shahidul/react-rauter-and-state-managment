@@ -15,6 +15,7 @@ const Navbar = () => {
     { id: 5, name: "Blog", path: "/blog" },
   ];
   // {open?"":"hidden"}, { open ? "top-8" : "-top-32"}
+  //react awsome icon <RxCross2></RxCross2> : <HiOutlineMenuAlt1></HiOutlineMenuAlt1>
 
   return (
     <nav className="text-black  bg-amber-300 px-6">
