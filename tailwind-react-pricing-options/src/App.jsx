@@ -6,6 +6,7 @@ import PricingOptions from "./components/pricingOptions/PricingOptions";
 
 function App() {
   const pricingPromise = fetch("pricingData.json").then((res) => res.json());
+
   return (
     <>
       <header>
