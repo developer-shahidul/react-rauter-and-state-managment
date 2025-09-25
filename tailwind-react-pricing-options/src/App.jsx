@@ -10,7 +10,6 @@ function App() {
         <Navbar></Navbar>
       </header>
       <main></main>
-      <h1 className="text-3xl text-green-700">Vite + React</h1>
       <footer></footer>
     </>
   );
