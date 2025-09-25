@@ -38,7 +38,7 @@ const Navbar = () => {
   ));
 
   return (
-    <nav className="flex justify-between md:mx-10 mx-2">
+    <nav className="flex justify-between md:mx-10 mx-2 mt-4 ">
       <span className="flex gap-6" onClick={() => setOpen(!open)}>
         {open ? (
           <Menu className="md:hidden" />
@@ -46,7 +46,7 @@ const Navbar = () => {
           <CircleX className="md:hidden"></CircleX>
         )}
         <ul
-          className={`absolute md:hidden duration-2000 ${
+          className={`absolute bg-amber-200 md:hidden duration-2000 rounded-sm text-black ${
             open ? "-top-40" : "top-10"
           }`}
         >
