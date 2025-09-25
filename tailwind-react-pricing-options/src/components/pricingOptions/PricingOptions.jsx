@@ -1,68 +1,7 @@
 //
 
-const PricingOptions = () => {
-  const pricingOptions = [
-    {
-      id: 1,
-      planName: "Basic",
-      price: "$15/month",
-      description: "Perfect for beginners starting their fitness journey.",
-      features: [
-        "Access to gym equipment",
-        "Locker facility",
-        "1 free fitness assessment",
-        "Free drinking water",
-        "Basic workout guide",
-      ],
-    },
-    {
-      id: 2,
-      planName: "Standard",
-      price: "$30/month",
-      description: "Ideal for regular workouts and group classes.",
-      features: [
-        "Access to gym equipment",
-        "Locker facility",
-        "Group fitness classes",
-        "2 personal training sessions",
-        "Free WiFi",
-        "Free parking",
-        "Discount on supplements",
-      ],
-    },
-    {
-      id: 3,
-      planName: "Premium",
-      price: "$50/month",
-      description:
-        "Complete package with personal training and extra facilities.",
-      features: [
-        "Unlimited gym access",
-        "Locker & shower facility",
-        "All group classes included",
-        "5 personal training sessions",
-        "Nutrition & diet consultation",
-        "Sauna/Steam room access",
-        "Free massage once a month",
-        "Priority booking for classes",
-      ],
-    },
-    {
-      id: 4,
-      planName: "Annual Membership",
-      price: "$450/year",
-      description: "Best value for one year with all premium benefits.",
-      features: [
-        "Unlimited gym access",
-        "All group classes",
-        "Personal training discount",
-        "Nutrition consultation",
-        "Priority support",
-        "2 free guest passes per month",
-        "Exclusive member events",
-      ],
-    },
-  ];
+const PricingOptions = ({ pricingPromise }) => {
+  const pricingData = use(pricingPromise);
 
   return <div></div>;
 };
