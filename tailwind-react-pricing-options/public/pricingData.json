@@ -32,6 +32,7 @@
     "planName": "Premium",
     "price": "$50/month",
     "description": "Complete package with personal training and extra facilities.",
+    "mostPopular": "true",
     "features": [
       "Unlimited gym access",
       "Locker & shower facility",
