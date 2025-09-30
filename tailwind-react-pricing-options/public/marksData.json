@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Rahim",
+    "Marks": {
+      "Bangla": 75,
+      "English": 80,
+      "Math": 90,
+      "Science": 85,
+      "Social": 70
+    }
+  },
+  {
+    "id": 2,
+    "name": "Karim",
+    "Marks": {
+      "Bangla": 65,
+      "English": 70,
+      "Math": 60,
+      "Science": 75,
+      "Social": 80
+    }
+  },
+  {
+    "id": 3,
+    "name": "Sonia",
+    "Marks": {
+      "Bangla": 85,
+      "English": 90,
+      "Math": 88,
+      "Science": 92,
+      "Social": 87
+    }
+  },
+  {
+    "id": 4,
+    "name": "Rafiq",
+    "Marks": {
+      "Bangla": 55,
+      "English": 60,
+      "Math": 50,
+      "Science": 65,
+      "Social": 60
+    }
+  },
+  {
+    "id": 5,
+    "name": "Mitu",
+    "Marks": {
+      "Bangla": 95,
+      "English": 88,
+      "Math": 92,
+      "Science": 90,
+      "Social": 94
+    }
+  },
+  {
+    "id": 6,
+    "name": "Jamal",
+    "Marks": {
+      "Bangla": 40,
+      "English": 45,
+      "Math": 50,
+      "Science": 38,
+      "Social": 42
+    }
+  },
+  {
+    "id": 7,
+    "name": "Salma",
+    "Marks": {
+      "Bangla": 70,
+      "English": 75,
+      "Math": 68,
+      "Science": 72,
+      "Social": 70
+    }
+  },
+  {
+    "id": 8,
+    "name": "Babul",
+    "Marks": {
+      "Bangla": 60,
+      "English": 65,
+      "Math": 58,
+      "Science": 62,
+      "Social": 64
+    }
+  },
+  {
+    "id": 9,
+    "name": "Mina",
+    "Marks": {
+      "Bangla": 80,
+      "English": 85,
+      "Math": 78,
+      "Science": 88,
+      "Social": 82
+    }
+  },
+  {
+    "id": 10,
+    "name": "Sabbir",
+    "Marks": {
+      "Bangla": 50,
+      "English": 55,
+      "Math": 45,
+      "Science": 60,
+      "Social": 58
+    }
+  }
+]
