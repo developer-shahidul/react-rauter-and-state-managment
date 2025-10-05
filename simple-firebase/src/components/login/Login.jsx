@@ -1,15 +1,23 @@
 //
-
-import { GoogleAuthProvider } from "firebase/auth/web-extension";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { auth } from "../firebase/Firebase.init";
 
 const Login = () => {
   const provider = new GoogleAuthProvider();
+
   const handleGoogleSignIn = () => {
-    console.log("google commig soon");
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log("✅ User signed in:", result);
+      })
+      .catch((error) => {
+        console.log("❌ Error:", error);
+      });
   };
+
   return (
     <div>
-      <button onClick={handleGoogleSignIn}>login with google</button>
+      <button onClick={handleGoogleSignIn}>Login with Google</button>
     </div>
   );
 };
