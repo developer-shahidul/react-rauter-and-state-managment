@@ -2,8 +2,11 @@
 import {
   signInWithPopup,
   GoogleAuthProvider,
-  getAuth,
   signOut,
+  GithubAuthProvider,
+  TwitterAuthProvider,
+  OAuthProvider,
+  EmailAuthProvider,
 } from "firebase/auth";
 import { auth } from "../firebase/Firebase.init";
 import { useState } from "react";
@@ -12,6 +15,9 @@ const Login = () => {
   const [user, setUser] = useState(null);
 
   const provider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
+  const twitterProvider = new TwitterAuthProvider();
+  const yahooProvider = new OAuthProvider("yahoo.com");
 
   const handleGoogleSignIn = () => {
     signInWithPopup(auth, provider)
@@ -25,7 +31,6 @@ const Login = () => {
       });
   };
   const handleSignOut = () => {
-    const auth = getAuth();
     signOut(auth)
       .then(() => {
         console.log("Sign Out done");
@@ -35,6 +40,37 @@ const Login = () => {
     setUser(null);
   };
 
+  // github
+  const handleGithubLogin = () => {
+    signInWithPopup(auth, githubProvider)
+      .then((result) => {
+        console.log(result.user);
+        setUser(result.user);
+      })
+      .catch((err) => console.log("err", err));
+    setUser(null);
+  };
+
+  // tweeter
+  const handleTwitterLogin = () => {
+    signInWithPopup(auth, twitterProvider)
+      .then((result) => {
+        console.log(result.user);
+        setUser(result.user);
+      })
+      .catch((err) => console.log("error", err.message));
+    setUser(null);
+  };
+
+  //microsoft signIn
+  const handleYahooSignIN = () => {
+    signInWithPopup(auth, yahooProvider)
+      .then((result) => {
+        console.log(result.user);
+        setUser(result.user);
+      })
+      .catch((error) => console.log("error", error));
+  };
   // if user exists ? signout : sign In
 
   return (
@@ -44,7 +80,12 @@ const Login = () => {
       {user ? (
         <button onClick={handleSignOut}>Sign Out</button>
       ) : (
-        <button onClick={handleGoogleSignIn}>Login with Google</button>
+        <div style={{ display: "flex", gap: "20px" }}>
+          <button onClick={handleGoogleSignIn}>Login with Google</button>
+          <button onClick={handleGithubLogin}> Login with Github</button>
+          <button onClick={handleTwitterLogin}>Login twitter</button>
+          <button onClick={handleYahooSignIN}>signIn microsoft</button>
+        </div>
       )}
 
       {user && (
