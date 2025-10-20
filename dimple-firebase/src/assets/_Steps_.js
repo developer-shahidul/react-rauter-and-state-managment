@@ -10,6 +10,6 @@
  * 7. go to firebase docs
  * 8. create auth (firebase initialize auth instance)
  * 9. go to the login button and event handler and create a provider (googleProvider)
- * 10. call the signInWithProvider(auth,googleProvider)
- * 11. after successfully getting data you may set it to a state
+ * 10.call the signInWithProvider(auth,googleProvider)
+ * 11.after successfully getting data you may set it to a state
  */
