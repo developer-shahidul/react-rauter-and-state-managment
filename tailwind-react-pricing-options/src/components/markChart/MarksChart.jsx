@@ -29,7 +29,7 @@ const MarksChart = ({ marksPromise }) => {
 
     return student;
   });
-  console.log(studentChartData);
+  // console.log(studentChartData);
   return (
     <div>
       <BarChart width={1600} height={400} data={studentChartData}>

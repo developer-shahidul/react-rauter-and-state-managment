@@ -7,7 +7,10 @@ const Header = () => {
       <NavLink style={{ marginRight: "20px" }} to="/">
         Home
       </NavLink>
-      <NavLink to="/login">Login</NavLink>
+      <NavLink to="/login" style={{ marginRight: "20px" }}>
+        Login
+      </NavLink>
+      <NavLink to="/community">Community</NavLink>
     </div>
   );
 };

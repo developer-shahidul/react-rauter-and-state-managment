@@ -6,6 +6,7 @@ import Home from "./components/Home/Home.jsx";
 import "./index.css";
 import App from "./App.jsx";
 import Login from "./components/login/Login.jsx";
+import Community from "./components/community/Community.jsx";
 
 // Router config
 const router = createBrowserRouter([
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login></Login>,
       },
+      { path: "/community", element: <Community></Community> },
     ],
   },
 ]);

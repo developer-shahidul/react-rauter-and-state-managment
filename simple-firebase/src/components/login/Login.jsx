@@ -62,7 +62,7 @@ const Login = () => {
     setUser(null);
   };
 
-  //microsoft signIn
+  //Yahoo! signIn
   const handleYahooSignIN = () => {
     signInWithPopup(auth, yahooProvider)
       .then((result) => {

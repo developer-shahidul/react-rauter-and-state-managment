@@ -1,7 +1,7 @@
 /**
  * 1. go to firebase.google.com and then go to console
  * 2. create a firebase project
- * 3. got to web setting for firebase app and resister the app
+ * 3. go to web setting for firebase app and resister the app
  * 4. npm install firebase
  * 5. get firebase config and [you should not] add the config in your project
  *    [do not save and share your config]
