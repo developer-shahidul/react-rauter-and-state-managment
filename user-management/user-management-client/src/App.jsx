@@ -19,16 +19,18 @@ function App() {
     console.log(user);
 
     fetch("http://localhost:5000/users", {
-      method: "post",
+      method: "POST",
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        "content-type": "application/json",
       },
       body: JSON.stringify(user),
     })
-      .then((res) => res.JSON())
+      .then((Response) => Response.json())
       .then((data) => {
-        console.log("inside post response", data);
+        console.log(data);
+        const newUser = [...users, data];
+        setUser(newUser);
+        form.reset();
       });
   };
   return (
