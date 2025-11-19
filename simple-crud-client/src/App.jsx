@@ -21,9 +21,12 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.insertedId) {
+          alert("users added successfully");
+          form.reset();
+        }
         const newUser = [...user, data];
         setUser(newUser);
-        form.reset();
       });
   };
 
