@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { MongoClient, ServerApiVersion } = require("mongodb");
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const port = process.env.PORT || 5000;
 const app = express();
 
@@ -31,16 +31,30 @@ async function run() {
     const database = client.db("userDB");
     const usersCollection = database.collection("users");
 
+    // read kora (crud)
     app.get("/users", async (req, res) => {
       const cursor = usersCollection.find();
       const result = await cursor.toArray();
       res.send(result);
     });
 
+    // create kora (crud)
     app.post("/users", async (req, res) => {
       const user = req.body;
       const result = await usersCollection.insertOne(user);
       console.log("New User Added:", user);
+      res.send(result);
+    });
+
+    // delet kora (crud)
+    app.delete("/users/:id", async (req, res) => {
+      const id = req.params.id;
+      console.log("pleace delet from database", id);
+      /* Delete the first document in the "movies" collection that matches
+    the specified query document */
+
+      const query = { _id: new ObjectId(id) };
+      const result = await usersCollection.deleteOne(query);
       res.send(result);
     });
 
