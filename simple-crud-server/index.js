@@ -38,6 +38,16 @@ async function run() {
       res.send(result);
     });
 
+    //update
+    //dainamic route value pawar jonno req.params bebohar hoi
+    app.get("/users/:id", async (req, res) => {
+      const id = req.params.id;
+
+      const query = { _id: new ObjectId(id) };
+      const user = await usersCollection.findOne(query);
+      res.send(user);
+    });
+
     // create kora (crud)
     app.post("/users", async (req, res) => {
       const user = req.body;

@@ -5,7 +5,7 @@
  * 2.create an user with passwoard
  * 3.whitelist IP address
  * 4.database > connect > driver > Node > view full code
- * 5.Change the passwoard the uri
+ * 5.Change the passwoard the url
  *
  *......................................
  * 1.CREATE --- POST
