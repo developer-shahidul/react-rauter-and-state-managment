@@ -38,7 +38,7 @@ async function run() {
       res.send(result);
     });
 
-    //update
+    //update///////////////////////////////////////////
     //dainamic route value pawar jonno req.params bebohar hoi
     app.get("/users/:id", async (req, res) => {
       const id = req.params.id;
@@ -46,6 +46,27 @@ async function run() {
       const query = { _id: new ObjectId(id) };
       const user = await usersCollection.findOne(query);
       res.send(user);
+    });
+
+    app.put("/users/:id", async (req, res) => {
+      const id = req.params.id;
+      const user = req.body;
+      console.log(user, id);
+
+      const filter = { _id: new ObjectId(id) };
+      const options = { upsert: true };
+      const updateUser = {
+        $set: {
+          name: user.name,
+          email: user.email,
+        },
+      };
+      const result = await usersCollection.updateOne(
+        filter,
+        updateUser,
+        options
+      );
+      res.send(result);
     });
 
     // create kora (crud)
