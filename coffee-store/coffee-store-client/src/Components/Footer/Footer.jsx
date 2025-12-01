@@ -80,15 +80,15 @@ const Footer = () => {
             </div>
 
             <div className="flex gap-6">
-              <a href="mailto:example@gmail.com">
+              <a href="mailto:ssshahidulislam71@gmail.com">
                 <Mail className="cursor-pointer w-6 h-6" />
               </a>
 
               <a
-                href="mailto:example@gmail.com"
+                href="mailto:ssshahidulislam71@gmail.com"
                 className="hover:underline text-xl text-[#1B1A1A]"
               >
-                info@gmail.com
+                ssshahidulislam71@gmail.com
               </a>
             </div>
             <div className="flex gap-6">
@@ -102,7 +102,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="hover:underline text-xl text-[#1B1A1A]"
               >
-                72, Wall street, King Road, Dhaka
+                72, Wall street, mongolkata, sunamgonj
               </a>
             </div>
           </div>

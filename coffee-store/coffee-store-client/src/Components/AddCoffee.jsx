@@ -1,13 +1,49 @@
 //
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router";
+import Swal from "sweetalert2";
 
 const AddCoffee = () => {
+  const handleAddCoffee = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const name = form.name.value;
+    const chef = form.chef.value;
+    const supplier = form.supplier.value;
+    const taste = form.taste.value;
+    const details = form.details.value;
+    const photo = form.photo.value;
+    const coffeeData = { name, chef, supplier, taste, details, photo };
+    console.log(coffeeData);
+
+    fetch("http://localhost:5000/coffee", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(coffeeData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "User added successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+          form.reset();
+        }
+      });
+  };
+
   return (
-    <div className="w-[1320px] mx-auto mt-12">
+    <div className="md:w-[1320px] mx-auto mt-12 ">
       {/* .raleway .rancho  */}
 
-      <div className="w-full">
+      <div className="w-full ">
         <Link
           to="/"
           className="inline-flex  gap-4 items-center mb-[50px] hover:bg-[#D2B48C] py-4 rounded-xl pr-2.5"
@@ -18,7 +54,7 @@ const AddCoffee = () => {
           <h3 className="text-[#374151] rancho text-3xl ">Back to home</h3>
         </Link>
 
-        <div className="bg-[#F4F3F0]">
+        <div className="bg-[#F4F3F0] px-2 lg:px-0">
           <div>
             <h2 className="py-16 rancho text-[45px] text-[#374151] text-center">
               Add New Coffee
@@ -30,8 +66,12 @@ const AddCoffee = () => {
               distribution of letters, as opposed to using Content here.
             </p>
           </div>
-          <form action="" className="max-w-5xl mx-auto pb-18">
-            <div className="grid grid-cols-2 gap-6 raleway ">
+          <form
+            action=""
+            onSubmit={handleAddCoffee}
+            className="max-w-5xl mx-auto pb-18"
+          >
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-6 raleway ">
               <div className="flex flex-col gap-4 ">
                 <label className="text-xl text-[#1B1A1A80] " htmlFor="name">
                   Name
@@ -53,7 +93,7 @@ const AddCoffee = () => {
                 <input
                   className="p-3 rounded-sm bg-[#FFFFFF] text-[#1B1A1A60]"
                   type="text"
-                  name="name"
+                  name="chef"
                   id=""
                   placeholder="Enter coffee chef"
                 />
@@ -66,7 +106,7 @@ const AddCoffee = () => {
                 <input
                   className="p-3 rounded-sm bg-[#FFFFFF] text-[#1B1A1A60]"
                   type="text"
-                  name="name"
+                  name="supplier"
                   id=""
                   placeholder="Enter coffee supplier"
                 />
@@ -79,7 +119,7 @@ const AddCoffee = () => {
                 <input
                   className="p-3 rounded-sm bg-[#FFFFFF] text-[#1B1A1A60]"
                   type="text"
-                  name="name"
+                  name="taste"
                   id=""
                   placeholder="Enter coffee taste"
                 />
@@ -92,7 +132,7 @@ const AddCoffee = () => {
                 <input
                   className="p-3 rounded-sm bg-[#FFFFFF] text-[#1B1A1A60]"
                   type="text"
-                  name="name"
+                  name="category"
                   id=""
                   placeholder="Enter coffee category"
                 />
@@ -105,12 +145,13 @@ const AddCoffee = () => {
                 <input
                   className="p-3 rounded-sm bg-[#FFFFFF] text-[#1B1A1A60]"
                   type="text"
-                  name="name"
+                  name="details"
                   id=""
                   placeholder="Enter coffee details"
                 />
               </div>
             </div>
+
             <div>
               <div className="flex flex-col gap-4 mt-6 ">
                 <label
@@ -122,8 +163,8 @@ const AddCoffee = () => {
 
                 <input
                   className="p-3 rounded-sm bg-[#FFFFFF] text-[#1B1A1A60] raleway"
-                  type="file"
-                  name="name"
+                  type="text"
+                  name="photo"
                   id=""
                   placeholder="Enter photo URL"
                 />
@@ -143,3 +184,10 @@ const AddCoffee = () => {
 };
 
 export default AddCoffee;
+
+// https://ibb.co/F9cjVVm
+// https://ibb.co/ZksW4DP
+// https://ibb.co/bgYP74DQ
+// https://ibb.co/QvBrgkHd
+// https://ibb.co/Xr2SRQj0
+// https://ibb.co/7xrDs8VP
