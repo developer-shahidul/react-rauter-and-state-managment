@@ -39,7 +39,8 @@ const CoffeeCard = ({ coffee }) => {
     });
   };
 
-  const { _id, name, chef, supplier, taste, photo, details } = coffee;
+  const { _id, name, chef, supplier, taste, photo, details, category } = coffee;
+
   return (
     <div className="bg-[#F5F4F1] flex justify-between items-center p-7 rounded-[10px] backdrop-opacity-60">
       <div>
@@ -67,12 +68,16 @@ const CoffeeCard = ({ coffee }) => {
           <span className="text-gray-700 ml-2 raleway">{details}</span>
         </p>
         <p>
+          <span className="font-semibold raleway">category:</span>
+          <span className="text-gray-700 ml-2 raleway">{category}</span>
+        </p>
+        <p>
           <span className="font-semibold raleway">Price:</span>
           <span className="text-gray-700 ml-2 raleway">890 Taka</span>
         </p>
       </div>
-      <div className="space-y-4">
-        <div className="w-10 h-10 bg-[#D2B48C] flex items-center justify-center rounded-[5px] cursor-pointer">
+      <div className="">
+        <div className="w-10 h-10 mb-4 bg-[#D2B48C] flex items-center justify-center rounded-[5px] cursor-pointer">
           <Eye color="white" height="20px" width="20px" />
         </div>
 
@@ -84,7 +89,7 @@ const CoffeeCard = ({ coffee }) => {
 
         <div
           onClick={() => handleDeleteUser(_id)}
-          className="w-10 h-10  bg-[#EA4744] flex items-center justify-center rounded-[5px] cursor-pointer"
+          className="w-10 h-10 mt-4  bg-[#EA4744] flex items-center justify-center rounded-[5px] cursor-pointer"
         >
           <Trash color="#FFFFFF" height="20px" width="20px" />
         </div>
