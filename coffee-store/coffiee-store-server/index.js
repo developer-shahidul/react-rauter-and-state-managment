@@ -42,11 +42,27 @@ async function run() {
       const result = await cursor.toArray();
       res.send(result);
     });
+    //   update
+    app.get("/coffee/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await userConnection.findOne(query);
+      res.send(result);
+    });
 
+    // post
     app.post("/coffee", async (req, res) => {
       const body = req.body;
       console.log(body);
       const result = await userConnection.insertOne(body);
+      res.send(result);
+    });
+
+    // delete
+    app.delete("/coffee/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await userConnection.deleteOne(query);
       res.send(result);
     });
 

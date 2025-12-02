@@ -1,10 +1,45 @@
 //
 import { Eye, Pencil, Trash } from "lucide-react";
+import { Link } from "react-router";
+import Swal from "sweetalert2";
 
 const CoffeeCard = ({ coffee }) => {
   //   console.log(coffee);
 
-  const { name, chef, supplier, taste, photo, details } = coffee;
+  //delete
+  const handleDeleteUser = (id) => {
+    console.log(id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log("delete confirm");
+
+        fetch(`http://localhost:5000/coffee/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your coffee has been deleted.",
+                icon: "success",
+              });
+            }
+            console.log(data);
+          });
+      }
+    });
+  };
+
+  const { _id, name, chef, supplier, taste, photo, details } = coffee;
   return (
     <div className="bg-[#F5F4F1] flex justify-between items-center p-7 rounded-[10px] backdrop-opacity-60">
       <div>
@@ -40,10 +75,17 @@ const CoffeeCard = ({ coffee }) => {
         <div className="w-10 h-10 bg-[#D2B48C] flex items-center justify-center rounded-[5px] cursor-pointer">
           <Eye color="white" height="20px" width="20px" />
         </div>
-        <div className="w-10 h-10  bg-[#3C393B] flex items-center justify-center rounded-[5px] cursor-pointer">
-          <Pencil color="#FFFFFF" height="20px" width="20px" />
-        </div>
-        <div className="w-10 h-10  bg-[#EA4744] flex items-center justify-center rounded-[5px] cursor-pointer">
+
+        <Link to={`/updateCoffee/${_id}`}>
+          <div className="w-10 h-10  bg-[#3C393B] flex items-center justify-center rounded-[5px] cursor-pointer">
+            <Pencil color="#FFFFFF" height="20px" width="20px" />
+          </div>
+        </Link>
+
+        <div
+          onClick={() => handleDeleteUser(_id)}
+          className="w-10 h-10  bg-[#EA4744] flex items-center justify-center rounded-[5px] cursor-pointer"
+        >
           <Trash color="#FFFFFF" height="20px" width="20px" />
         </div>
       </div>
