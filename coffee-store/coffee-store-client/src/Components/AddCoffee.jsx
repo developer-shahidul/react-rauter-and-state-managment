@@ -32,7 +32,7 @@ const AddCoffee = () => {
             title: "Success!",
             text: "User added successfully",
             icon: "success",
-            confirmButtonText: "Cool",
+            confirmButtonText: "OK",
           });
           form.reset();
         }
@@ -83,6 +83,7 @@ const AddCoffee = () => {
                   name="name"
                   id=""
                   placeholder="Enter coffee name"
+                  required
                 />
               </div>
               <div className="flex flex-col gap-4 ">
@@ -96,6 +97,7 @@ const AddCoffee = () => {
                   name="chef"
                   id=""
                   placeholder="Enter coffee chef"
+                  required
                 />
               </div>
               <div className="flex flex-col gap-4 ">
@@ -109,6 +111,7 @@ const AddCoffee = () => {
                   name="supplier"
                   id=""
                   placeholder="Enter coffee supplier"
+                  required
                 />
               </div>
               <div className="flex flex-col gap-4 ">
@@ -122,6 +125,7 @@ const AddCoffee = () => {
                   name="taste"
                   id=""
                   placeholder="Enter coffee taste"
+                  required
                 />
               </div>
               <div className="flex flex-col gap-4 ">
@@ -135,6 +139,7 @@ const AddCoffee = () => {
                   name="category"
                   id=""
                   placeholder="Enter coffee category"
+                  required
                 />
               </div>
               <div className="flex flex-col gap-4 ">
@@ -148,6 +153,7 @@ const AddCoffee = () => {
                   name="details"
                   id=""
                   placeholder="Enter coffee details"
+                  required
                 />
               </div>
             </div>
@@ -167,6 +173,7 @@ const AddCoffee = () => {
                   name="photo"
                   id=""
                   placeholder="Enter photo URL"
+                  required
                 />
 
                 <input
@@ -184,10 +191,3 @@ const AddCoffee = () => {
 };
 
 export default AddCoffee;
-
-// https://ibb.co/F9cjVVm
-// https://ibb.co/ZksW4DP
-// https://ibb.co/bgYP74DQ
-// https://ibb.co/QvBrgkHd
-// https://ibb.co/Xr2SRQj0
-// https://ibb.co/7xrDs8VP

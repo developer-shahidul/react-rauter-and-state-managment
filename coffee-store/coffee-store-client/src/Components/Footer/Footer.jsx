@@ -119,7 +119,7 @@ const Footer = () => {
               id=""
               required
               placeholder="Name"
-              className="py-4 pl-3 w-full bg-white rounded-md"
+              className="py-4 pl-3 w-full bg-white rounded-md ring-2 ring-white focus:ring-[#E3B577] outline-0 shadow-xl"
             />
             <input
               type="email"
@@ -127,10 +127,10 @@ const Footer = () => {
               id=""
               required
               placeholder="Email"
-              className="py-4 pl-3   bg-white rounded-md"
+              className="py-4 pl-3   bg-white rounded-md ring-2 ring-white focus:ring-[#E3B577] outline-0 shadow-xl"
             />
             <textarea
-              className="pl-3 pt-4 pb-24  bg-white rounded-md"
+              className="pl-3 pt-4 pb-24  bg-white rounded-md ring-2 ring-white focus:ring-[#E3B577] outline-0 shadow-xl"
               name=""
               id=""
               placeholder="Message"
@@ -138,7 +138,8 @@ const Footer = () => {
 
             <button
               type="submit"
-              className="border-2 hover:cursor-pointer rancho text-6 w-fit rounded-[30px] py-[9px] px-[21px]"
+              className=" hover:cursor-pointer rancho text-6 w-fit rounded-[30px] py-[9px] 
+              px-[21px]  border-2 focus:border-[#E3B577] outline-0"
             >
               Send Message
             </button>

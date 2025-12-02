@@ -10,7 +10,7 @@ import cup8 from "../../assets/cups/Rectangle 16.png";
 
 const Follow = () => {
   return (
-    <div className="my-[120px] lg:w-[1320px] mx-auto text-center px-2 lg:px-0">
+    <div className="mb-[120px] lg:w-[1320px] mx-auto text-center px-2 lg:px-0">
       <h5 className="raleway text-xl text-[#1B1A1A]">Follow Us Now</h5>
       <h2 className="text-[55px] rancho text-[#331A15] mb-12">
         Follow on Instagram

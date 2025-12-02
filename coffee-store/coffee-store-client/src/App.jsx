@@ -1,9 +1,14 @@
 //
 import bannerImg from "./assets/more/3.png";
 import Follow from "./Components/FollowOnInstragram/Follow";
+import OurProduct from "./Components/OurProduct/OurProduct";
 import Review from "./Components/Reviews/Review";
+import { useLoaderData } from "react-router";
 
 function App() {
+  const useCoffeeData = useLoaderData();
+  // console.log(useCoffeeData);
+
   return (
     <>
       <div
@@ -32,6 +37,11 @@ function App() {
 
       {/* COFFEE REVIEW */}
       <Review></Review>
+
+      {/* coffee list */}
+      <OurProduct coffees={useCoffeeData}></OurProduct>
+
+      {/* follow on instragram */}
       <Follow></Follow>
     </>
   );
