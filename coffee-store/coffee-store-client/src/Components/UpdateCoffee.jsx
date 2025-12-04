@@ -5,6 +5,12 @@ import { Link } from "react-router";
 import Swal from "sweetalert2";
 
 const UpdateCoffee = () => {
+  // load data
+  const coffee = useLoaderData();
+  const { _id, name, chef, supplier, taste, photo, details, category } = coffee;
+
+  // console.log(coffee);
+
   const handleUpdateCoffee = (event) => {
     event.preventDefault();
 
@@ -49,11 +55,6 @@ const UpdateCoffee = () => {
       });
   };
 
-  // load data
-  const coffee = useLoaderData();
-  const { _id, name, chef, supplier, taste, photo, details, category } = coffee;
-
-  // console.log(coffee);
   return (
     <div>
       <div className="md:w-[1320px] mx-auto mt-12 ">

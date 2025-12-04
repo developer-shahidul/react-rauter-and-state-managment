@@ -39,7 +39,7 @@ function App() {
       <Review></Review>
 
       {/* coffee list */}
-      <OurProduct coffees={useCoffeeData}></OurProduct>
+      <OurProduct coffeeData={useCoffeeData}></OurProduct>
 
       {/* follow on instragram */}
       <Follow></Follow>

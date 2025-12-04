@@ -7,6 +7,7 @@ import { RouterProvider } from "react-router/dom";
 import AddCoffee from "./Components/AddCoffee.jsx";
 import UpdateCoffee from "./Components/UpdateCoffee.jsx";
 import Layout from "./Components/Layout.jsx";
+import Error from "./Components/Error/Error.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,15 @@ const router = createBrowserRouter([
         element: <UpdateCoffee></UpdateCoffee>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/coffee/${params.id}`),
+      },
+
+      {
+        path: "/error",
+        element: <Error></Error>,
+      },
+      {
+        path: "*",
+        element: <Error></Error>,
       },
     ],
   },

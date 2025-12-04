@@ -3,9 +3,12 @@ import { Link } from "react-router";
 import bgimg1 from "../../assets/more/1.png";
 import { Coffee } from "lucide-react";
 import CoffeeCard from "../CoffeeCard/CoffeeCard";
+import { useState } from "react";
 
-const OurProduct = ({ coffees }) => {
+const OurProduct = ({ coffeeData }) => {
   // console.log(coffees);
+  const [coffee, setCoffee] = useState(coffeeData);
+
   return (
     <div
       className="mt-28 pb-28 md:w-full backdrop-opacity-100"
@@ -28,8 +31,13 @@ const OurProduct = ({ coffees }) => {
         </div>
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2  gap-6 px-2 lg:px-0">
-          {coffees.map((items) => (
-            <CoffeeCard coffee={items} key={items._id}></CoffeeCard>
+          {coffee.map((items) => (
+            <CoffeeCard
+              coffee={items}
+              coffees={coffee}
+              setCoffees={setCoffee}
+              key={items._id}
+            ></CoffeeCard>
           ))}
         </div>
       </div>
